@@ -9,16 +9,16 @@ License:     GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
 
-/* WooCommerce/Stripe Add New Card as Default is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version.
+/* PIE\WCNotifyMemberPurchasingSubscription is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or any later version.
 
-WooCommerce/Stripe Add New Card as Default is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+PIE\WCNotifyMemberPurchasingSubscription is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with WooCommerce/Stripe Add New Card as Default. If not, see https://www.gnu.org/licenses/gpl-3.0.en.html */
+You should have received a copy of the GNU General Public License along with PIE\WCNotifyMemberPurchasingSubscription. If not, see https://www.gnu.org/licenses/gpl-3.0.en.html */
 
 namespace PIE\WCNotifyMemberPurchasingSubscription;
 
 if ( function_exists( 'wc_memberships_is_user_active_member' ) ) {
-  add_filter( 'woocommerce_add_to_cart_validation', 'add_purchase_sub_notice', 20, 3 );
+  add_filter( 'woocommerce_add_to_cart_validation', 'PIE\WCNotifyMemberPurchasingSubscription\add_purchase_sub_notice', 20, 3 );
   function add_purchase_sub_notice( $valid, $product_id, $quantity ) {
       $user = get_current_user_id();
       if ( $user && wc_memberships_is_user_active_member( $user ) ) {
