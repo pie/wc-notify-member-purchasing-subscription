@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License along with PIE
 namespace PIE\WCNotifyMemberPurchasingSubscription;
 
 if ( function_exists( 'wc_memberships_is_user_active_member' ) ) {
-  add_filter( 'woocommerce_add_to_cart_validation', 'PIE\WCNotifyMemberPurchasingSubscription\add_purchase_sub_notice', 20, 3 );
+  add_filter( 'woocommerce_add_to_cart_validation', __NAMESPACE__ . '\\add_purchase_sub_notice', 20, 3 );
   function add_purchase_sub_notice( $valid, $product_id, $quantity ) {
       $user = get_current_user_id();
       if ( $user && wc_memberships_is_user_active_member( $user ) ) {
