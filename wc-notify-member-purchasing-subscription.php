@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WC Add Notice of Second Subscription
+Plugin Name: WooCommerce: Add Notice of Second Subscription
 Description: Adds a notice when validating a WooCommerce cart if an active member tries to purchase a subscription
 Version:     0.1
 Author:      The team at PIE
